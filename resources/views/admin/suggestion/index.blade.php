@@ -21,6 +21,7 @@
         <tr>
             <th>No</th>
             <th>Email</th>
+            <th>Date</th>
             <th>Suggestion</th>
             <th width="280px">Action</th>
         </tr>
@@ -28,6 +29,7 @@
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $suggestion->user ? $suggestion->user->email : '' }}</td>
+                <td>{{ $suggestion->created_at }}</td>
                 <td>{{ \Illuminate\Support\Str::limit($suggestion->suggestion, 20, '...') }}</td>
                 <td>
                     <a class="btn btn-info" href="{{ route('suggestions.show',$suggestion->id) }}">Show</a>
