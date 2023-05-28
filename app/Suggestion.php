@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class Suggestion extends Model
 {
     use SoftDeletes;
 
@@ -18,12 +18,14 @@ class Category extends Model
      */
     protected $dates = ['deleted_at'];
 
-    /**
-     *
-     * Get the suggestions for the category.
-     */
-    public function suggestions()
+
+    public function category()
     {
-        return $this->hasMany(Suggestion::class);
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
