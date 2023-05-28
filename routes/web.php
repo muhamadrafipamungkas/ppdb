@@ -17,9 +17,9 @@ Route::get('/', function () {
     $user = \Illuminate\Support\Facades\Auth::user();
     if ($user) {
         if ($user->role == 'admin') {
-            return view('home');
+            return redirect(route('suggestions.index'));
         } else if ($user->role == 'user') {
-            return view('home');
+            return redirect(route('suggestions.mine'));
         }
     }
     return view('welcome');
