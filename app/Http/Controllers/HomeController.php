@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         if ($user) {
-            return view('home');
+            return redirect(route('suggestions.mine'));
         } else {
             return redirect('/');
         }

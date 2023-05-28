@@ -92,4 +92,25 @@ class SuggestionController extends Controller
         }
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showByUserId()
+    {
+        $user = Auth::user();
+        if ($user) {
+            $suggestions = Suggestion::where('user_id', $user->id)->latest()->paginate(5);
+            if (!$suggestions) {
+                abort(404);
+            }
+            return view('user.suggestion.mine',compact('suggestions', 'user'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        } else {
+            return redirect('/');
+        }
+    }
+
 }
