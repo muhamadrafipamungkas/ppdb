@@ -19,7 +19,7 @@ Route::get('/', function () {
         if ($user->role == 'admin') {
             return redirect(route('suggestions.index'));
         } else if ($user->role == 'user') {
-            return redirect(route('suggestions.mine'));
+            return redirect(route('registries.create'));
         }
     }
     return view('welcome');
@@ -28,23 +28,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('categories', 'CategoryController')->middleware('\App\Http\Middleware\AdminAuth');
+Route::get('/registries/create', 'RegistryController@create')
+    ->name('registries.create');
 
-
-Route::get('/suggestions/mine', 'SuggestionController@showByUserId')
-    ->name('suggestions.mine');
-
-Route::get('/suggestions', 'SuggestionController@index')
-    ->middleware('\App\Http\Middleware\AdminAuth')
-    ->name('suggestions.index');
-
-Route::get('/suggestions/create', 'SuggestionController@create')
-    ->name('suggestions.create');
-
-Route::get('/suggestions/{id}', 'SuggestionController@show')
-    ->name('suggestions.show');
-
-Route::post('/suggestions', 'SuggestionController@store')
-    ->name('suggestions.store');
-
-
+Route::post('/registries', 'RegistryController@store')
+    ->name('registries.store');

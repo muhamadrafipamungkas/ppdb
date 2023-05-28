@@ -26,6 +26,6 @@ class RegistryController extends Controller
      */
     public function create()
     {
-        return view('admin.registry.create');
+        return view('user.registry.create');
     }
 }
