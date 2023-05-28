@@ -35,24 +35,6 @@
             @enderror
         </div>
 
-        {{-- NISN field --}}
-        <div class="input-group mb-3">
-            <input type="number" name="nisn" class="form-control @error('nisn') is-invalid @enderror"
-                   value="{{ old('nisn') }}" placeholder="NISN">
-
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-user"></span>
-                </div>
-            </div>
-
-            @error('nisn')
-            <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-
         {{-- Email field --}}
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
