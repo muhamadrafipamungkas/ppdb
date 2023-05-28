@@ -29,3 +29,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('categories', 'CategoryController')->middleware('\App\Http\Middleware\AdminAuth');
+
+Route::get('/suggestions', 'SuggestionController@index')
+    ->middleware('\App\Http\Middleware\AdminAuth')
+    ->name('suggestions.index');
+
+
+Route::get('/suggestions/create', 'SuggestionController@create')
+    ->name('suggestions.create');
+
+
+Route::get('/suggestions/{id}', 'SuggestionController@show')
+    ->name('suggestions.show');
+
+
+Route::post('/suggestions', 'SuggestionController@store')
+    ->name('suggestions.store');

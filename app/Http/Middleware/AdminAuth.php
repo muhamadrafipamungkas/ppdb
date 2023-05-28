@@ -22,7 +22,7 @@ class AdminAuth
         if (!$isLogin){
             return redirect()->route('login')->with('message', 'Authentication Error.');
         } else if ($isLogin && $isLogin->role != 'admin') {
-            return redirect()->route('/');
+            return redirect('/');
         }
         return $next($request);
     }

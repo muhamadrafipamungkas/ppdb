@@ -9,7 +9,7 @@ class Suggestion extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['suggestion', 'category_id', 'user_id'];
 
     /**
      * The attributes that should be mutated to dates.
