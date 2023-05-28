@@ -20,4 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('categories', 'CategoryController');
+Route::resource('categories', 'CategoryController')->middleware('\App\Http\Middleware\AdminAuth');
