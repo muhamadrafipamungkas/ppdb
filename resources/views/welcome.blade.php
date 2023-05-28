@@ -67,13 +67,13 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Aplikasi Kotak Saran
+                    Suggestion Box's App
                 </div>
                 @if (Route::has('login'))
                 <div class="links">
-                    <a href="{{ route('login') }}">Masuk</a>
+                    <a href="{{ route('login') }}">Login</a>
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Daftar</a>
+                        <a href="{{ route('register') }}">Register</a>
                     @endif
                 </div>
                 @endif
