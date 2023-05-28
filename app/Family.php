@@ -5,11 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class Family extends Model
 {
+
     use SoftDeletes;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'birth_date',
+        'birth_place', 'email', 'phone', 'religion', 'sex',
+        'relation_type' ,'registry_id'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -18,12 +21,8 @@ class Category extends Model
      */
     protected $dates = ['deleted_at'];
 
-    /**
-     *
-     * Get the suggestions for the category.
-     */
-    public function suggestions()
+    public function registry()
     {
-        return $this->hasMany(Suggestion::class);
+        return $this->belongsTo(Registry::class);
     }
 }
