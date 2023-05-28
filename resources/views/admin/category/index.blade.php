@@ -30,9 +30,9 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $category->name }}</td>
                 <td>
-                    <form action="{{ route('categories',$category->id) }}" method="POST">
-                        <a class="btn btn-info" href="{{ route('categories',$category->id) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('categories',$category->id) }}">Edit</a>
+                    <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
+                        <a class="btn btn-info" href="{{ route('categories.show',$category->id) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
