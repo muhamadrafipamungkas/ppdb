@@ -3,7 +3,7 @@
 @if ($navbarItemHelper->isSearch($item))
 
     {{-- Search form --}}
-    @include('adminlte::partials.navbar.menu-item-search-form')
+    {{-- @include('adminlte::partials.navbar.menu-item-search-form')--}}
 
 @elseif ($navbarItemHelper->isNotification($item))
 
