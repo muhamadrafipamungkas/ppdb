@@ -11,7 +11,7 @@ class Registry extends Model
 
     protected $fillable = ['name', 'birth_date', 'nisn',
     'birth_place', 'email', 'phone', 'religion', 'sibling',
-    'sex', 'previous_school'];
+    'sex', 'previous_school', 'status', 'notes'];
 
     /**
      * The attributes that should be mutated to dates.

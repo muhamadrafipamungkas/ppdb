@@ -26,6 +26,8 @@ class CreateRegistriesTable extends Migration
             $table->integer('sibling');
             $table->enum('sex', ['F', 'M']);
             $table->string('previous_school');
+            $table->string('status');
+            $table->text('notes');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')
