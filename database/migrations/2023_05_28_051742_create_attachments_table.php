@@ -19,6 +19,7 @@ class CreateAttachmentsTable extends Migration
             $table->string('attachment_type');
             $table->unsignedBigInteger('registry_id');
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('registry_id')->references('id')->on('registries')
                 ->onDelete('cascade');
         });

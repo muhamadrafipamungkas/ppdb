@@ -17,7 +17,7 @@ class CreateRegistriesTable extends Migration
             $table->id();
             $table->string('registry_number');
             $table->string('name');
-            $table->unsignedInteger('nisn');
+            $table->string('nisn');
             $table->date('birth_date');
             $table->string('birth_place');
             $table->string('email');
@@ -26,10 +26,11 @@ class CreateRegistriesTable extends Migration
             $table->integer('sibling');
             $table->enum('sex', ['F', 'M']);
             $table->string('previous_school');
-            $table->string('status');
-            $table->text('notes');
+            $table->string('status')->nullable();
+            $table->text('notes')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade');
         });

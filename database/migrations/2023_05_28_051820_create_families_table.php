@@ -16,7 +16,7 @@ class CreateFamiliesTable extends Migration
         Schema::create('families', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedInteger('nisn');
+            $table->string('nik');
             $table->date('birth_date');
             $table->string('birth_place');
             $table->string('email');
@@ -25,6 +25,7 @@ class CreateFamiliesTable extends Migration
             $table->enum('sex', ['F', 'M']);
             $table->unsignedBigInteger('registry_id');
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('registry_id')->references('id')->on('registries')
                 ->onDelete('cascade');
         });
