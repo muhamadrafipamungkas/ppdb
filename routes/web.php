@@ -17,9 +17,9 @@ Route::get('/', function () {
     $user = \Illuminate\Support\Facades\Auth::user();
     if ($user) {
         if ($user->role == 'admin') {
-            return redirect(route('suggestions.index'));
+            return redirect(route('registries.index'));
         } else if ($user->role == 'user') {
-            return redirect(route('registries.create'));
+            return redirect(route('registries.mine'));
         }
     }
     return view('welcome');
@@ -33,3 +33,12 @@ Route::get('/registries/create', 'RegistryController@create')
 
 Route::post('/registries', 'RegistryController@store')
     ->name('registries.store');
+
+Route::get('/registries', 'RegistryController@index')
+    ->name('registries.index');
+
+Route::get('/registries/mine', 'RegistryController@showRegistryByUserId')
+    ->name('registries.mine');
+
+Route::get('/registries/{id}', 'RegistryController@show')
+    ->name('registries.show');

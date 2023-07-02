@@ -9,8 +9,8 @@ class Registry extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'birth_date', 'nisn',
-    'birth_place', 'email', 'phone', 'religion', 'sibling',
+    protected $fillable = ['name','registry_number', 'birth_date', 'nisn',
+    'birth_place', 'email', 'phone', 'religion', 'sibling', 'user_id',
     'sex', 'previous_school', 'status', 'notes'];
 
     /**

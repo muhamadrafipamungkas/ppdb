@@ -26,7 +26,11 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         if ($user) {
-            return redirect(route('registries.create'));
+            if ($user->role == "admin") {
+                return redirect(route('registries.index'));
+            } else {
+                return redirect(route('registries.mine'));
+            }
         } else {
             return redirect('/');
         }

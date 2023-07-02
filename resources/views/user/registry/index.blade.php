@@ -1,12 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Registries')
+@section('title', 'My Registry')
 
 @section('content')
     <div class="row pt-4">
         <div class="col-lg-12 margin-tb">
             <div class="float-left d-inline-block">
                 <h2>Registry</h2>
+            </div>
+            <div class="float-right d-inline-block">
+                <a class="btn btn-success" href="{{ route('registries.create') }}">Create New Registry</a>
             </div>
         </div>
     </div>
@@ -31,8 +34,8 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $registry->name }}</td>
                 <td>{{ $registry->registry_number }}</td>
-                <td>{{ $registry->status }}</td>
                 <td>{{ $registry->notes }}</td>
+                <td>{{ $registry->status }}</td>
                 <td>
                     <a class="btn btn-info" href="{{ route('registries.show',$registry->id) }}">Show</a>
                 </td>

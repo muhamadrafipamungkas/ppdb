@@ -11,7 +11,7 @@ class Family extends Model
     use SoftDeletes;
 
     protected $fillable = ['name', 'birth_date',
-        'birth_place', 'email', 'phone', 'religion', 'sex',
+        'birth_place', 'email', 'phone', 'nik', 'sex',
         'relation_type' ,'registry_id'];
 
     /**
