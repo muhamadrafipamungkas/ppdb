@@ -260,6 +260,7 @@ class RegistryController extends Controller
         $book = Registry::findOrFail($id);
         if($user && $user->role == 'admin') {
             $book->update([
+                'notes' => $request->notes,
                 'status' => "REJECTED"
             ]);
 

@@ -320,7 +320,9 @@
                     },
                     success: function(data){
                         if (data.status) {
-                            Swal.fire('Rejected!', '', 'success')
+                            Swal.fire('Rejected!', '', 'success').then(() => {
+                                location.replace('/')
+                            })
                         } else {
                             Swal.fire('Error!', 'Fail to reject registry', 'error')
                         }
