@@ -244,8 +244,14 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-left">
-            <button id="approve" class="btn btn-primary">Approve</button>
-            <button id="reject" class="btn btn-secondary">Reject</button>
+            @if($registry->status === "AWAITING_APPROVAL")
+                <button id="approve" class="btn btn-primary">Approve</button>
+                <button id="reject" class="btn btn-danger">Reject</button>
+            @elseif($registry->status === "APPROVED")
+                <button class="btn btn-info">Approved</button>
+            @elseif($registry->status === "REJECTED")
+                <button class="btn btn-info">Rejected</button>
+            @endif
         </div>
     </div>
 @stop
@@ -257,8 +263,8 @@
 @section('js')
     <script src="{{asset('vendor/sweetalert2/sweetalert2.js')}}"></script>
     <script>
-        const approveUrl = "registries/" + {{$registry->id}} + "/approve";
-        const rejectUrl = "registries/" + {{$registry->id}} + "/approve";
+        const approveUrl = "/registries/" + {{$registry->id}} + "/approve";
+        const rejectUrl = "/registries/" + {{$registry->id}} + "/reject";
 
         $('#approve').click(function() {
             Swal.fire({
@@ -276,7 +282,9 @@
                         },
                         success: function(data){
                             if (data.status) {
-                                Swal.fire('Approved!', '', 'success')
+                                Swal.fire('Approved!', '', 'success').then(() => {
+                                    location.replace('/')
+                                })
                             } else {
                                 Swal.fire('Error!', 'Fail to approve registry', 'error')
                             }

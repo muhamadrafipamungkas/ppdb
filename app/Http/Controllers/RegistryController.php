@@ -229,4 +229,51 @@ class RegistryController extends Controller
             return redirect('/');
         }
     }
+
+    public function approve(Request $request, $id)
+    {
+        $user = Auth::user();
+        $book = Registry::findOrFail($id);
+        if($user && $user->role == 'admin') {
+            $book->update([
+                'status' => "APPROVED"
+            ]);
+
+            $response = [
+                "status" => true,
+                "message" => "Approval Success"
+            ];
+        } else {
+            $response = [
+                "status" => false,
+                "message" => "Unauthorized"
+            ];
+
+        }
+        return response()->json($response);
+    }
+
+
+    public function reject(Request $request, $id)
+    {
+        $user = Auth::user();
+        $book = Registry::findOrFail($id);
+        if($user && $user->role == 'admin') {
+            $book->update([
+                'status' => "REJECTED"
+            ]);
+
+            $response = [
+                "status" => true,
+                "message" => "Rejection Success"
+            ];
+        } else {
+            $response = [
+                "status" => false,
+                "message" => "Unauthorized"
+            ];
+
+        }
+        return response()->json($response);
+    }
 }

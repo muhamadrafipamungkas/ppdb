@@ -42,3 +42,9 @@ Route::get('/registries/mine', 'RegistryController@showRegistryByUserId')
 
 Route::get('/registries/{id}', 'RegistryController@show')
     ->name('registries.show');
+
+Route::post('/registries/{id}/approve', 'RegistryController@approve')
+    ->name('registries.approve');
+
+Route::post('/registries/{id}/reject', 'RegistryController@reject')
+    ->name('registries.reject');

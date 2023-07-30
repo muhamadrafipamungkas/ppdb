@@ -34,8 +34,8 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $registry->name }}</td>
                 <td>{{ $registry->registry_number }}</td>
-                <td>{{ $registry->notes }}</td>
                 <td>{{ $registry->status }}</td>
+                <td>{{ $registry->notes }}</td>
                 <td>
                     <a class="btn btn-info" href="{{ route('registries.show',$registry->id) }}">Show</a>
                 </td>
