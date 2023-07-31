@@ -220,7 +220,7 @@
     <script>
         $(function() {
             // Select 2
-            $(".select2").select2();
+            // $(".select2").select2();
             $("#sibling-amount").val(0);
             // Datepicker
             $(".datepicker").daterangepicker({
