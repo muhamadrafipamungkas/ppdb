@@ -78,7 +78,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Birth Date:</strong>
-                    <input type="text" name="birth_date" class="form-control datepicker" value="" placeholder="01/01/1970">
+                    <input type="text" name="birth_date" class="form-control datepicker" value=""  placeholder="1970-12-31">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -122,7 +122,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Birth Date:</strong>
-                    <input type="text" name="father_birth_date" class="form-control datepicker" value="" placeholder="01/01/1970">
+                    <input type="text" name="father_birth_date" class="form-control datepicker" value="" placeholder="1970-12-31">
                 </div>
             </div>
 
@@ -164,7 +164,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Birth Date:</strong>
-                    <input type="text" name="mother_birth_date" class="form-control datepicker" value="" placeholder="01/01/1970">
+                    <input type="text" name="mother_birth_date" class="form-control datepicker" value=""  placeholder="1970-12-31">
                 </div>
             </div>
 
@@ -270,7 +270,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Birth Date:</strong>
-                        <input type="text" name="sibling_birth_date_${siblingAmountNow}"  id="sibling_birth_date_${siblingAmountNow}"  class="form-control sibling datepicker" value="" placeholder="01/01/1970">
+                        <input type="text" name="sibling_birth_date_${siblingAmountNow}"  id="sibling_birth_date_${siblingAmountNow}"  class="form-control sibling datepicker" value="" placeholder="1970-12-31">
                     </div>
                 </div>
 
