@@ -215,7 +215,7 @@
     <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
     <script src="{{asset('vendor/sweetalert2/sweetalert2.js')}}"></script>
     <script src="{{asset('vendor/moment/moment.min.js')}}"></script>
-    <script src="{{asset('vendor/daterangepicker/daterangepicker.js')}}"></script>
+{{--    <script src="{{asset('vendor/daterangepicker/daterangepicker.js')}}"></script>--}}
 
     <script>
         $(function() {
